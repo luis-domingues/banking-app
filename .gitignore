@@ -1,0 +1,7 @@
+# Arquivos de solução e projeto
+*.sln
+*.csproj
+
+# Arquivos compilados e pastas temporárias
+bin/*
+obj/*
