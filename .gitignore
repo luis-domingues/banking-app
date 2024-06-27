@@ -5,3 +5,6 @@
 # Arquivos compilados e pastas temporárias
 bin/*
 obj/*
+
+# Pasta e arquivo de configuração de log
+NLog.config
