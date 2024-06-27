@@ -1,10 +1,12 @@
 ﻿using System;
+using NLog;
 using AppBancario.Models;
 
 namespace AppBancario.Models
 {
     class Program
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
             Console.WriteLine("==========================================");
@@ -30,7 +32,7 @@ namespace AppBancario.Models
                     case 1:
                         conta_cliente.ShowBalance();
                         break;
-                        
+
                     case 2:
                         Console.Write("\nValor do saque: ");
                         decimal amount;
@@ -47,20 +49,27 @@ namespace AppBancario.Models
                             Console.WriteLine($"Erro de saque: {erroAmount.Message}");
                         }
                         break;
+
                     case 3:
-                        Console.WriteLine("Esta opção ainda está em desenvolvimento");
-                        break; //under development...
+                        Console.WriteLine("\nDigite o valor que deseja depositar: ");
+                        decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
+                        if (conta_cliente.Deposit(depositAmount))
+                        {
+                            conta_cliente.ShowBalance();
+                        }
+                        break;
+
                     case 4:
                         Console.WriteLine("Esta opção ainda está em desenvolvimento");
-                        break; //under development.. 
+                        break; //under development...
 
                     case 5:
-                    Console.WriteLine("Obrigado por utilizar o nosso serviço!");
-                    Environment.Exit(0);
+                        Console.WriteLine("Obrigado por utilizar o nosso serviço!");
+                        Environment.Exit(0);
                         break;
 
                     default:
-                        Console.WriteLine("Selecione um opção válida.");
+                        Console.WriteLine("Selecione uma opção válida.");
                         break;
                 }
             }
