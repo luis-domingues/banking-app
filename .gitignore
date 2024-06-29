@@ -8,6 +8,3 @@ obj/*
 
 # Pasta e arquivo de configuração de log
 NLog.config
-
-# Arquivos para README
-*.mp4
