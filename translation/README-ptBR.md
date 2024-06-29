@@ -3,7 +3,7 @@
 ![Contagem de linguagens do GitHub](https://img.shields.io/github/languages/count/luis-domingues/banking-app?style=flat)
 ![Forks do GitHub](https://img.shields.io/github/forks/luis-domingues/banking-app?style=flat)
 
-<video controls src="assets/video/video.mp4" title="Demo"></video>
+<video controls src="./assets/video/video.mp4" title="Demo"></video>
 
 > Este projeto está em desenvolvimento ⚠️
 
