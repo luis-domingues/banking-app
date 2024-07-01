@@ -51,7 +51,7 @@ namespace AppBancario.Models
                         break;
 
                     case 3:
-                        Console.WriteLine("\nDigite o valor que deseja depositar: ");
+                        Console.Write("\nDigite o valor que deseja depositar: ");
                         decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
                         if (conta_cliente.Deposit(depositAmount))
                         {
@@ -60,8 +60,14 @@ namespace AppBancario.Models
                         break;
 
                     case 4:
-                        Console.WriteLine("Esta opção ainda está em desenvolvimento");
-                        break; //under development...
+                        Console.Write("\nDigite o nome da conta que deseja realizar a transferência: ");
+                        string nameAccountTransfer = Console.ReadLine();
+
+                        Console.Write("\nÓtimo!\nAgora digite o valor que deseja transferir: ");
+                        decimal amountMoneyTranfer = Convert.ToDecimal(Console.ReadLine());
+                        conta_cliente.Transfer(amountMoneyTranfer, nameAccountTransfer);
+                        conta_cliente.ShowBalance();
+                        break;
 
                     case 5:
                         Console.WriteLine("Obrigado por utilizar o nosso serviço!");
