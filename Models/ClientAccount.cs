@@ -24,7 +24,7 @@ namespace AppBancario.Models
 
         public void ShowBalance()
         {
-            Console.WriteLine($"\nSALDO DISPONÍVEL: {Balance:c}");
+            Console.WriteLine($"SALDO DISPONÍVEL: {Balance:c}");
         }
 
         public bool WithdrawMoney(decimal amount)
@@ -47,6 +47,7 @@ namespace AppBancario.Models
                 return true;
             }
         }
+
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public bool Deposit(decimal depositAmount)
@@ -85,6 +86,33 @@ namespace AppBancario.Models
             {
                 logger.Error($"Erro inesperado durante o depósito. {erroGenericExecution}");
                 Console.WriteLine($"Erro inesperado durante o depósito.");
+                return false;
+            }
+        }
+
+        public bool Transfer(decimal amountMoneyTranfer, string nameAccountTransfer)
+        {
+            try
+            {
+                if (amountMoneyTranfer <= 0 || !decimal.TryParse(amountMoneyTranfer.ToString(), out decimal amount))
+                {
+                    logger.Error("Valor da transferência inválido. Digite um valor decimal positivo.");
+                    return false;
+                }
+
+                if (amountMoneyTranfer > Balance)
+                {
+                    logger.Error("Saldo insuficiente para realizar a transferência.");
+                    return false;
+                }
+
+                Balance -= amountMoneyTranfer;
+                Console.WriteLine($"SUCESSO!\nO você transferiu {amountMoneyTranfer:c} para {nameAccountTransfer}.");
+                return true;
+            }
+            catch (Exception erroTransfer)
+            {
+                logger.Error($"Erro ao realizar transferência. {erroTransfer}");
                 return false;
             }
         }
