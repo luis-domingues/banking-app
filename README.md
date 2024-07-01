@@ -22,9 +22,9 @@ The program is NOT yet complete, but I will certainly improve it and finish it.
 
 - [x] Implemented `FormatException` exception handling for invalid entries in the main menu.
 
-- [ ] Implementation of the Deposit method to allow deposits to the account, with validation and error handling.
+- [x] Implementation of the Deposit method to allow deposits to the account, with validation and error handling.
 
-- [ ] Implementation of the Transfer method to carry out transactions to other accounts.
+- [x] Implementation of the Transfer method to carry out transactions to other accounts.
 
 
 ## Usage 🔧
