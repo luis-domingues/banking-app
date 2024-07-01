@@ -51,7 +51,7 @@ dotnet run
 
 ## Collaborators ✍
 <table>
-    <tr>
+    <tr align="center">
         <a href="https://github.com/luis-domingues">
             <td>
                 <img src="https://avatars.githubusercontent.com/u/157630664?v=4" width="100px;" alt="Luís Paulo Domingues Profile Picture"/><br>
