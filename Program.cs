@@ -12,10 +12,22 @@ namespace AppBancario.Models
             Console.WriteLine("==========================================");
             Console.Write("Por favor, insira seus dados corretamente.\nDigite seu nome: ");
             string name = Console.ReadLine();
+            
+            int clientNumberAccess;
+            do
+            {
+                Console.Write("Digite sua senha (Ela deverá conter 8 dígitos): ");
+                clientNumberAccess = Convert.ToInt32(Console.ReadLine());
+
+                if (clientNumberAccess.ToString().Length != 8)
+                {
+                    Console.WriteLine("\nSenha inválida! A senha deverá conter 8 números.\n");
+                }
+            } while (clientNumberAccess.ToString().Length != 8);
 
             Console.Clear();
 
-            ClientAccount conta_cliente = new ClientAccount(name);
+            ClientAccount conta_cliente = new ClientAccount(name, clientNumberAccess);
             conta_cliente.AccountAccess();
 
             bool access = true;
@@ -60,7 +72,7 @@ namespace AppBancario.Models
                         break;
 
                     case 4:
-                        Console.Write("\nDigite o nome da conta que deseja realizar a transferência: ");
+                        Console.Write("\nNome da conta que deseja realizar a transferência: ");
                         string nameAccountTransfer = Console.ReadLine();
 
                         Console.Write("\nÓtimo!\nAgora digite o valor que deseja transferir: ");
