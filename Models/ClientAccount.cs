@@ -11,7 +11,7 @@ namespace AppBancario.Models
         public string ClientName { get; set; }
         public decimal Balance { get; set; }
 
-        public ClientAccount(string clientName, decimal initialBalance = 0M)
+        public ClientAccount(string clientName, decimal initialBalance = 100M)
         {
             ClientName = clientName;
             Balance = initialBalance;
