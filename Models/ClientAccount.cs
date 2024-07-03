@@ -9,11 +9,13 @@ namespace AppBancario.Models
     public class ClientAccount
     {
         public string ClientName { get; set; }
+        public int ClientNumberAccess { get; set; }
         public decimal Balance { get; set; }
 
-        public ClientAccount(string clientName, decimal initialBalance = 100M)
+        public ClientAccount(string clientName, int clientNumberAccess, decimal initialBalance = 100M)
         {
             ClientName = clientName;
+            ClientNumberAccess = clientNumberAccess;
             Balance = initialBalance;
         }
 
