@@ -12,6 +12,12 @@ This is one of my small projects in which I intend to create an application that
 The program is NOT yet complete, but I will certainly improve it and finish it.
 
 ## Updates 🆙
+**Improved Account Security:**
+
+- **Implemented password functionality:** The account access number now acts as the password for secure account access. Users are prompted to enter their password during account creation, and password validation is enforced to ensure it has exactly 8 digits.
+
+**Previous Updates:**
+
 - [x] 'Balance' attribute changed to `public` to allow access in ShowBalance method.
 
 - [x] Initialization of the account balance in the 'ClientAccount' class constructor.
