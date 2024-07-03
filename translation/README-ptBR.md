@@ -12,13 +12,20 @@ Este é um dos meus pequenos projetos no qual pretendo criar uma aplicação que
 O programa AINDA não está completo, mas certamente irei melhorá-lo e finalizá-lo.
 
 ## Atualizações 🆙
-- [x] Atributo 'Balance' alterado para `public` para permitir acesso no método ShowBalance.
+
+**Segurança Aprimorada da Conta:**
+
+- **Funcionalidade de senha implementada:** O número de acesso da conta agora atua como a senha para acesso seguro à conta. Os usuários são solicitados a digitar sua senha durante o acesso da conta e a validação da senha é aplicada para garantir que tenha exatamente 8 dígitos.
+
+**Atualizações Anteriores:**
+
+- [x] O atributo 'Balance' foi alterado para `public` para permitir o acesso no método ShowBalance.
 
 - [x] Inicialização do saldo da conta no construtor da classe 'ClientAccount'.
 
-- [x] Ajuste no método ShowBalance para exibir o valor atual do saldo da conta.
+- [x] Ajuste no método ShowBalance para exibir o valor real do saldo da conta.
 
-- [x] Implementação do método WithdrawMoney para realizar saques da conta, com validação de saldo e tratamento de erros.
+- [x] Implementação do método WithdrawMoney para fazer saques da conta, com validação de saldo e tratamento de erros.
 
 - [x] Implementação do tratamento de exceção `FormatException` para entradas inválidas no menu principal.
 
