@@ -5,7 +5,7 @@
 
 ![Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXc0bm5kYXd5eXF1aXdlZGd3ZG9qYThzOGs1ZWM5eWgyZWVpdXZ5ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LQ2jYFdtprw9WrYTnX/giphy.gif)
 
-> This project is under development ⚠️
+> v1.0 of the project ✔️
 
 ## About the application 📁
 This is one of my small projects in which I intend to create an application that simulates a banking app through my knowledge in C#, such as Object-Oriented Programming (OOP), Interfaces, among other fundamentals.
