@@ -3,7 +3,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/luis-domingues/banking-app?style=flat)
 ![GitHub forks](https://img.shields.io/github/forks/luis-domingues/banking-app?style=flat)
 
-![Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXc0bm5kYXd5eXF1aXdlZGd3ZG9qYThzOGs1ZWM5eWgyZWVpdXZ5ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LQ2jYFdtprw9WrYTnX/giphy.gif)
+![20240705_102555](https://github.com/luis-domingues/banking-app/assets/157630664/22ce82e1-0819-4748-ad9e-801fb7d0853c)
 
 > v1.0 of the project ✔️
 
