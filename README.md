@@ -5,32 +5,17 @@
 
 ![20240705_102555](https://github.com/luis-domingues/banking-app/assets/157630664/22ce82e1-0819-4748-ad9e-801fb7d0853c)
 
-> v1.0 of the project ✔️
+> [!TIP]
+> Banking App simple model of a banking application that is easy and quick to understand: [baking-app](https://www.linkedin.com/feed/update/urn:li:activity:7213913533342769152/).
 
 ## About the application 📁
 This is one of my small projects in which I intend to create an application that simulates a banking app through my knowledge in C#, such as Object-Oriented Programming (OOP), Interfaces, among other fundamentals.
 The program is NOT yet complete, but I will certainly improve it and finish it.
 
 ## Updates 🆙
-**Improved Account Security:**
+Check out the implementations already made by [clicking here](https://github.com/luis-domingues/banking-app).
 
-- **Implemented password functionality:** The account access number now acts as the password for secure account access. Users are prompted to enter their password during account creation, and password validation is enforced to ensure it has exactly 8 digits.
-
-**Previous Updates:**
-
-- [x] 'Balance' attribute changed to `public` to allow access in ShowBalance method.
-
-- [x] Initialization of the account balance in the 'ClientAccount' class constructor.
-
-- [x] Adjustment in the ShowBalance method to display the actual value of the account balance.
-
-- [x] Implementation of the WithdrawMoney method to make withdrawals from the account, with balance validation and error handling.
-
-- [x] Implemented `FormatException` exception handling for invalid entries in the main menu.
-
-- [x] Implementation of the Deposit method to allow deposits to the account, with validation and error handling.
-
-- [x] Implementation of the Transfer method to carry out transactions to other accounts.
+**New features and implementations coming soon!**
 
 
 ## Usage 🔧
@@ -74,3 +59,4 @@ Contributions are always welcome! Open an issue or submit a pull request to the 
 <h3>Documentations that might help</h3>
 
 [📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
+
