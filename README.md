@@ -3,7 +3,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/luis-domingues/banking-app?style=flat)
 ![GitHub forks](https://img.shields.io/github/forks/luis-domingues/banking-app?style=flat)
 
-![20240705_102555](https://github.com/luis-domingues/banking-app/assets/157630664/22ce82e1-0819-4748-ad9e-801fb7d0853c)
+![demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjQxczdhNjdsdHVxMjd4d25ydDRwc2dvdTY0Y3kyY2s4bjh1NzdzeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/szBaoCjcOoVJrylxG3/giphy.gif)
 
 > [!TIP]
 > Banking App simple model of a banking application that is easy and quick to understand: [baking-app](https://www.linkedin.com/feed/update/urn:li:activity:7213913533342769152/).
@@ -13,10 +13,10 @@ This is one of my small projects in which I intend to create an application that
 The program is NOT yet complete, but I will certainly improve it and finish it.
 
 ## Updates 🆙
+
+1. Added ReadPassword method to mask password input with asterisks in console applications
+
 Check out the implementations already made by [clicking here](https://github.com/luis-domingues/banking-app).
-
-**New features and implementations coming soon!**
-
 
 ## Usage 🔧
 <h3>Prerequisites</h3>
