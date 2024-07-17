@@ -1,96 +1,52 @@
 ﻿using System;
 using NLog;
 using AppBancario.Models;
+using BankingApp.Models;
 
 namespace AppBancario.Models
 {
     class Program
+    {   
+        public static void Main(string[] args) 
+{
+    Console.WriteLine("It's good to see you here!\nSelect the two options below: ");
+    Console.Write("\n[1]  Access your account\n[2]  Open an account now\n");
+    int selectOption = Convert.ToInt32(Console.ReadLine());
+
+    Console.Clear();
+
+    switch (selectOption)
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
-        static void Main(string[] args)
-        {
-            Console.WriteLine("==========================================");
-            Console.Write("Por favor, insira seus dados corretamente.\nDigite seu nome: ");
-            string name = Console.ReadLine();
+        case 1:
+            Console.WriteLine("Is comming...");
+            break;
+        case 2:
+            Console.Write("User registration\n________________________________________________\n");
+            Costumer costumer = new Costumer();
+            Account accountInfos = new Account();
+
+            Console.Write("Enter your Document Number (CPF or SSN): ");
+            long inputDocNumber = Convert.ToInt64(Console.ReadLine());
+            //Console.WriteLine(costumer.GetDocNumber(inputDocNumber));
             
-            int clientNumberAccess;
-            do
-            {
-                Console.Write("Digite sua senha (Ela deverá conter 8 dígitos): ");
-                clientNumberAccess = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter your first name: ");
+            string fname = Console.ReadLine();
+            Console.Write("Now, enter your last name: ");
+            string lname = Console.ReadLine();
+            //Console.WriteLine($"Hello, {costumer.FullName(fname, lname)}");
 
-                if (clientNumberAccess.ToString().Length != 8)
-                {
-                    Console.WriteLine("\nSenha inválida! A senha deverá conter 8 números.\n");
-                }
-            } while (clientNumberAccess.ToString().Length != 8);
+            Console.Write("Enter your date af birth: (yyyy.MM.dd) ");
+            DateTime datetime = Convert.ToDateTime(Console.ReadLine());
+            //Console.WriteLine($"Your birth year: {costumer.GetDateOfBirth(datetime).ToString("yyyy-MM-dd")}");
 
-            Console.Clear();
-
-            ClientAccount conta_cliente = new ClientAccount(name, clientNumberAccess);
-            conta_cliente.AccountAccess();
-
-            bool access = true;
-            while (access)
-            {
-                Console.WriteLine("\nO que deseja fazer?");
-                Console.Write("\n[1].  Ver saldo bancário\n[2].  Realizar saque\n[3].  Realizar depósito\n[4].  Transferir dinheiro\n[5].  Sair da conta\n");
-                int selectSection = Convert.ToInt32(Console.ReadLine());
-
-                Console.Clear();
-
-                switch (selectSection)
-                {
-                    case 1:
-                        conta_cliente.ShowBalance();
-                        break;
-
-                    case 2:
-                        Console.Write("\nValor do saque: ");
-                        decimal amount;
-                        try
-                        {
-                            amount = Convert.ToDecimal(Console.ReadLine());
-                            if (conta_cliente.WithdrawMoney(amount))
-                            {
-                                conta_cliente.ShowBalance();
-                            }
-                        }
-                        catch (FormatException erroAmount)
-                        {
-                            Console.WriteLine($"Erro de saque: {erroAmount.Message}");
-                        }
-                        break;
-
-                    case 3:
-                        Console.Write("\nDigite o valor que deseja depositar: ");
-                        decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
-                        if (conta_cliente.Deposit(depositAmount))
-                        {
-                            conta_cliente.ShowBalance();
-                        }
-                        break;
-
-                    case 4:
-                        Console.Write("\nNome da conta que deseja realizar a transferência: ");
-                        string nameAccountTransfer = Console.ReadLine();
-
-                        Console.Write("\nÓtimo!\nAgora digite o valor que deseja transferir: ");
-                        decimal amountMoneyTranfer = Convert.ToDecimal(Console.ReadLine());
-                        conta_cliente.Transfer(amountMoneyTranfer, nameAccountTransfer);
-                        conta_cliente.ShowBalance();
-                        break;
-
-                    case 5:
-                        Console.WriteLine("Obrigado por utilizar o nosso serviço!");
-                        Environment.Exit(0);
-                        break;
-
-                    default:
-                        Console.WriteLine("Selecione uma opção válida.");
-                        break;
-                }
-            }
-        }
+            Console.Write("Now, create your account password\nThe password must be 8 characters long\n\n");
+            string inputPassword = accountInfos.GetPassword();
+            Console.WriteLine($"Hello, {costumer.FullName(fname, lname)}! It's good to have you with us. You can now access your account online");
+            break;
+        default:
+            Console.WriteLine("Is comming...");
+            break;
+    }
+}   
     }
 }
