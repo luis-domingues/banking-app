@@ -7,32 +7,15 @@ namespace BankingApp.Models
 {
     public class Account
     {
-        private string Password { get; set; }
-        private string HashedPassword { get; set; }
+        public int Id { get; set; }
+        public string CustomerName { get; set; }
+        public decimal Balance { get; set; }
 
-        public string GetPassword()
+        public Account(int id, string customerName, decimal balance)
         {
-            string password = "";
-            ConsoleKeyInfo key;
-
-            do
-            {
-                key = Console.ReadKey(true);
-
-                if (key.Key == ConsoleKey.Backspace && password.Length > 0)
-                {
-                    password = password.Substring(0, password.Length - 1);
-                    Console.Write("\b \b");
-                }
-                else if (key.Key != ConsoleKey.Enter)
-                {
-                    password += key.KeyChar;
-                    Console.Write("*");
-                }
-            } while (key.Key != ConsoleKey.Enter);
-
-            Console.WriteLine();
-            return password;
+            Id = id;
+            CustomerName = customerName;
+            Balance = balance;
         }
     }
 }
