@@ -2,51 +2,60 @@
 using NLog;
 using AppBancario.Models;
 using BankingApp.Models;
+using BankingApp.Services;
+using BankingApp.View;
 
 namespace AppBancario.Models
 {
     class Program
-    {   
-        public static void Main(string[] args) 
-{
-    Console.WriteLine("It's good to see you here!\nSelect the two options below: ");
-    Console.Write("\n[1]  Access your account\n[2]  Open an account now\n");
-    int selectOption = Convert.ToInt32(Console.ReadLine());
-
-    Console.Clear();
-
-    switch (selectOption)
     {
-        case 1:
-            Console.WriteLine("Is comming...");
-            break;
-        case 2:
-            Console.Write("User registration\n________________________________________________\n");
-            Costumer costumer = new Costumer();
-            Account accountInfos = new Account();
+        public static void Main(string[] args)
+        {
+            Painel painel = new Painel();
+            IAccountService accountService = new AccountService();
 
-            Console.Write("Enter your Document Number (CPF or SSN): ");
-            long inputDocNumber = Convert.ToInt64(Console.ReadLine());
-            //Console.WriteLine(costumer.GetDocNumber(inputDocNumber));
-            
-            Console.Write("Enter your first name: ");
-            string fname = Console.ReadLine();
-            Console.Write("Now, enter your last name: ");
-            string lname = Console.ReadLine();
-            //Console.WriteLine($"Hello, {costumer.FullName(fname, lname)}");
+            while (true)
+            {
+                painel.InitialPainel();
+                string option = Console.ReadLine();
 
-            Console.Write("Enter your date af birth: (yyyy.MM.dd) ");
-            DateTime datetime = Convert.ToDateTime(Console.ReadLine());
-            //Console.WriteLine($"Your birth year: {costumer.GetDateOfBirth(datetime).ToString("yyyy-MM-dd")}");
+                Console.Clear();
 
-            Console.Write("Now, create your account password\nThe password must be 8 characters long\n\n");
-            string inputPassword = accountInfos.GetPassword();
-            Console.WriteLine($"Hello, {costumer.FullName(fname, lname)}! It's good to have you with us. You can now access your account online");
-            break;
-        default:
-            Console.WriteLine("Is comming...");
-            break;
-    }
-}   
+                switch (option)
+                {
+                    case "1":
+                        Console.Write("Digite o nome do cliente: ");
+                        string name = Console.ReadLine();
+                        Console.Write("Digite o saldo inicial: ");
+                        decimal initialBalance = decimal.Parse(Console.ReadLine());
+                        accountService.CreateAccount(name, initialBalance);
+                        break;
+                    case "2":
+                        Console.Write("Digite o ID da conta: ");
+                        int accountId = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"Saldo: {accountService.GetBalance(accountId)}");
+                        break;
+                    case "3":
+                        Console.Write("Digite o ID da conta de origem: ");
+                        int fromAccountId = int.Parse(Console.ReadLine());
+                        Console.Write("Digite o ID da conta de destino: ");
+                        int toAccountId = int.Parse(Console.ReadLine());
+                        Console.Write("Digite o valor a ser transferido: ");
+                        decimal amount = decimal.Parse(Console.ReadLine());
+                        accountService.Transfer(fromAccountId, toAccountId, amount);
+                        break;
+                    case "4":
+                        Console.Write("Digite o ID da conta: ");
+                        accountId = int.Parse(Console.ReadLine());
+                        accountService.DeleteAccount(accountId);
+                        break;
+                    case "5":
+                        return;
+                    default:
+                        Console.WriteLine("Opção inválida!");
+                        break;
+                }
+            }
+        }
     }
 }
