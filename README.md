@@ -1,62 +1,30 @@
 # Banking App
-![GitHub repo size](https://img.shields.io/github/repo-size/luis-domingues/banking-app?style=flat)
-![GitHub language count](https://img.shields.io/github/languages/count/luis-domingues/banking-app?style=flat)
-![GitHub forks](https://img.shields.io/github/forks/luis-domingues/banking-app?style=flat)
 
-![demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjQxczdhNjdsdHVxMjd4d25ydDRwc2dvdTY0Y3kyY2s4bjh1NzdzeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/szBaoCjcOoVJrylxG3/giphy.gif)
+A simple digital banking application system built in <a href="https://dotnet.microsoft.com/en-us/" target="_blank">.NET</a>
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/luis-domingues/banking-app)
+![GitHub last commit](https://img.shields.io/github/last-commit/luis-domingues/banking-app)
+![Static Badge](https://img.shields.io/badge/.NET-8.0-purple)
 
 > [!TIP]
-> Banking App simple model of a banking application that is easy and quick to understand: [baking-app](https://www.linkedin.com/feed/update/urn:li:activity:7213913533342769152/).
+> Looking for something that can help with the development of your projects? Try [devboard](https://github.com/luis-domingues/devboard).
 
-## About the application 📁
-This is one of my small projects in which I intend to create an application that simulates a banking app through my knowledge in C#, such as Object-Oriented Programming (OOP), Interfaces, among other fundamentals.
-The program is NOT yet complete, but I will certainly improve it and finish it.
+> This project is under development ⚠
 
-## Updates 🆙
+## Features
+* **Simplified and clean** terminal to perform all application actions.
+* **Features similar** to existing banking applications.
 
-1. Added ReadPassword method to mask password input with asterisks in console applications
-
-Check out the implementations already made by [clicking here](https://github.com/luis-domingues/banking-app).
-
-## Usage 🔧
-<h3>Prerequisites</h3>
-
-1. You need to have [.NET](https://dotnet.microsoft.com/en-us/) along with the SDK or Runtime version.
-
-2. .NET version: 6.0 or higher.
-
-3. With .NET installed on your machine, run the following command to install [NLog](https://www.nuget.org/packages/NLog):
-
-```
-dotnet add package NLog --version 5.3.2
-``` 
-
-To use banking-app, you need clone this repository
+## Installation
+Firstly, you will need to have the [.NET SDK ](https://learn.microsoft.com/en-us/dotnet/core/install/). Soon after, clone this repository
 ```bash
-git clone https://github.com/luis-domingues/banking-app
+clone https://github.com/luis-domingues/banking-app
 ```
-Start the project with 
-```
-dotnet run
-```
+Then, start the project.
 
-## Collaborators ✍
-<table>
-    <tr align="center">
-        <a href="https://github.com/luis-domingues">
-            <td>
-                <img src="https://avatars.githubusercontent.com/u/157630664?v=4" width="100px;" alt="Luís Paulo Domingues Profile Picture"/><br>
-            <sub>
-                <b>Luís Paulo Domingues</b>
-            </td>
-        </a>
-    </tr>
-<table>
-
-## Contribute 🤝
+## Contribute 
 Contributions are always welcome! Open an issue or submit a pull request to the repository.
 
-<h3>Documentations that might help</h3>
+<h3>Documentation that might help</h3>
 
-[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
-
+[How to create a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request).
