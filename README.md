@@ -9,6 +9,8 @@ A simple digital banking application system built in <a href="https://dotnet.mic
 > [!TIP]
 > Looking for something that can help with the development of your projects? Try [devboard](https://github.com/luis-domingues/devboard).
 
+https://github.com/user-attachments/assets/fdabe9b1-cf50-4280-b058-5f32c5da1716
+
 > This project is under development ⚠
 
 ## Features
