@@ -54,13 +54,13 @@ namespace BankingApp.Views
             switch(option)
             {
                 case 1:
-                    appServices.ViewCurrentAccountBalance();
+                    appServices.ShowCurrentBalance();
                     break;
                 case 2:
-                    appServices.BankTransferArea();
+                    appServices.TransferFunds();
                     break;
                 case 3:
-                    Console.WriteLine("Wait! New updates are coming soon...");
+                    appServices.ShowCardDetails();
                     break;
             }
         }

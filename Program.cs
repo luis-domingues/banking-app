@@ -6,10 +6,30 @@ namespace BankingApp
     {
         static void Main(string[] args) 
         {
-            Customer customer = new Customer();
+            CCustomer customer = new Customer
+            {
+                FirstName = "John",
+                LastName = "Doe",
+                Card = new Card
+                {
+                    Number = "1234567890123456",
+                    ExpirationDate = new DateTime(2025, 12, 31),
+                    Brand = "Visa",
+                    Limit = 5000
+                }
+            };
+
             AppInterface display = new AppInterface();
-            Console.WriteLine($"Welcome! {customer.FullName("INSERT", "NAME")}\n");
-            display.MenuDisplay();
+
+            try
+            {
+                Console.WriteLine($"Welcome! {customer.FullName()}\n");
+                display.MenuDisplay();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
         }
     }
 }
