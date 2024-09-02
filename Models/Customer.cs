@@ -17,5 +17,7 @@ namespace BankingApp.Models
             this.lastName = lname;           
             return fname + " " + lastName;
         }
+        
+        public Card Card { get; set; }
     }
 }
