@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using BankingApp.Models;
 using BankingApp.Models;
 
 namespace BankingApp.Services
@@ -9,44 +6,39 @@ namespace BankingApp.Services
     internal class AppServices
     {
         private readonly BankAccount _bankAccount;
+        private readonly Customer _customer;
 
-        public AppServices(BankAccount bankAccount)
+        public AppServices(BankAccount bankAccount, Customer customer)
         {
             this._bankAccount = bankAccount;
+            this._customer = customer;
         }
-        
+
         public void ShowCurrentBalance()
         {
-            Console.WriteLine($"Current account balance: {bankAccount.GetCurrentBalance():0.00}");
+            Console.WriteLine($"Current account balance: {_bankAccount.GetCurrentBalance():0.00}");
         }
-        
+
         public void TransferFunds(string recipientName, decimal amount)
         {
-            if(decimal.TryParse(Console.ReadLine(), out decimal transferAmount))
+            bool success = _bankAccount.Pay(amount);
+            if (success)
             {
-                bool success = bankAccount.Withdraw(transferAmount);
-                if (success)
-                {
-                    Console.WriteLine($"Transfer successful to {recipientName}!");
-                    Console.WriteLine($"New balance: ${bankAccount.GetCurrentBalance():0.00}");
-                }
-                else
-                {
-                    Console.WriteLine("Insufficient balance for the transfer.");
-                }
+                Console.WriteLine($"Transfer successful to {recipientName}!");
+                Console.WriteLine($"New balance: {_bankAccount.GetCurrentBalance():0.00}");
             }
             else
             {
-                Console.WriteLine("Invalid amount. Please enter a numeric value.");
+                Console.WriteLine("Insufficient balance for the transfer.");
             }
         }
+
         public void ShowCardDetails()
         {
-            Console.WriteLine($"Número do cartão: {customer.Card.Number.Substring(12)}");
-            Console.WriteLine($"Validade: {customer.Card.ExpirationDate:MM/yyyy}");
-            Console.WriteLine($"Bandeira: {customer.Card.Brand}");
-            Console.WriteLine($"Limite disponível: R$ {customer.Card.Limit:N2}");
+            Console.WriteLine($"Card Number: {_customer.Card.Number.Substring(12)}");
+            Console.WriteLine($"Expiration Date: {_customer.Card.ExpirationDate:MM/yyyy}");
+            Console.WriteLine($"Brand: {_customer.Card.Brand}");
+            Console.WriteLine($"Limit: R$ {_customer.Card.Limit:N2}");
         }
-        
     }
 }
