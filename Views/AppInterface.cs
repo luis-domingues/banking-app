@@ -1,20 +1,23 @@
-using BankingApp.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using BakingApp.Services;
 
 namespace BankingApp.Views
 {
     internal class AppInterface
     {
+        private readonly AppServices _appServices;
+
+        public AppInterface(AppServices appServices)
+        {
+            _appServices = appServices;
+        }
+
         public void MenuDisplay()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Select one of the options below:");
             Console.ResetColor();
 
-            Console.WriteLine("Use up and down arrows to navigate and press \u001b[32mEnter/Return\u001b[0m key to select\n");
+            Console.WriteLine("Use up and down arrows to navigate and press Enter to select\n");
 
             ConsoleKeyInfo key;
             int selectOption = 1;
@@ -22,6 +25,7 @@ namespace BankingApp.Views
             (int left, int top) = Console.GetCursorPosition();
             string color = "\u001b[32m> ";
             Console.CursorVisible = false;
+
             while (!isSelected)
             {
                 Console.SetCursorPosition(left, top);
@@ -49,18 +53,22 @@ namespace BankingApp.Views
 
         private void ExecuteOption(int option)
         {
-            AppServices appServices = new AppServices();
-            
-            switch(option)
+            switch (option)
             {
                 case 1:
-                    appServices.ShowCurrentBalance();
+                    _appServices.ShowCurrentBalance();
                     break;
                 case 2:
-                    appServices.TransferFunds();
+                    Console.WriteLine("Enter recipient name:");
+                    string recipient = Console.ReadLine();
+                    Console.WriteLine("Enter amount to transfer:");
+                    if (decimal.TryParse(Console.ReadLine(), out decimal amount))
+                    {
+                        _appServices.TransferFunds(recipient, amount);
+                    }
                     break;
                 case 3:
-                    appServices.ShowCardDetails();
+                    _appServices.ShowCardDetails();
                     break;
             }
         }
