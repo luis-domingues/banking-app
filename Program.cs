@@ -1,15 +1,18 @@
-﻿using System;
+using BankingApp.Models;
+using BankingApp.Services;
+using BankingApp.Views;
+using BankingApp.Models;
 
 namespace BankingApp
 {
-    class Program 
+    class Program
     {
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
-            CCustomer customer = new Customer
+            Customer customer = new Customer
             {
-                FirstName = "John",
-                LastName = "Doe",
+                FirstName = "Insert",
+                LastName = "Name",
                 Card = new Card
                 {
                     Number = "1234567890123456",
@@ -19,7 +22,10 @@ namespace BankingApp
                 }
             };
 
-            AppInterface display = new AppInterface();
+            BankAccount bankAccount = new BankAccount(500);
+
+            AppServices appServices = new AppServices(bankAccount, customer);
+            AppInterface display = new AppInterface(appServices);
 
             try
             {
@@ -30,6 +36,9 @@ namespace BankingApp
             {
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
+
+            Console.ReadKey();
+
         }
     }
 }
