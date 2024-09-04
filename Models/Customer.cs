@@ -1,23 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BankingApp.Models;
 
 namespace BankingApp.Models
 {
     internal class Customer
     {
-        private string firstName;
-        private string lastName;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
-        public string FullName(string fname, string lname)
+        public string FullName()
         {
-            this.firstName = fname;
-            this.lastName = lname;           
-            return fname + " " + lastName;
+            return $"{FirstName} {LastName}";
         }
-        
+
         public Card Card { get; set; }
     }
 }
