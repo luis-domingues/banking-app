@@ -17,7 +17,7 @@ namespace BankingApp.Views
             Console.WriteLine("Select one of the options below:");
             Console.ResetColor();
 
-            Console.WriteLine("Use up and down arrows to navigate and press Enter to select\n");
+            Console.WriteLine("Use up and down arrows to navigate and press \u001b[32mEnter\u001b[0m to select\n");
 
             ConsoleKeyInfo key;
             int selectOption = 1;
@@ -59,9 +59,9 @@ namespace BankingApp.Views
                     _appServices.ShowCurrentBalance();
                     break;
                 case 2:
-                    Console.WriteLine("Enter recipient name:");
+                    Console.Write("Enter recipient name: ");
                     string recipient = Console.ReadLine();
-                    Console.WriteLine("Enter amount to transfer:");
+                    Console.Write("Enter amount to transfer: " );
                     if (decimal.TryParse(Console.ReadLine(), out decimal amount))
                     {
                         _appServices.TransferFunds(recipient, amount);
