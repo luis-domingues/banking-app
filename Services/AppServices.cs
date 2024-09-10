@@ -3,7 +3,7 @@ using BankingApp.Models;
 
 namespace BankingApp.Services
 {
-    internal class AppServices
+        internal class AppServices
     {
         private readonly BankAccount _bankAccount;
         private readonly Customer _customer;
@@ -24,21 +24,22 @@ namespace BankingApp.Services
             bool success = _bankAccount.Pay(amount);
             if (success)
             {
-                Console.WriteLine($"Transfer successful to {recipientName}!");
-                Console.WriteLine($"New balance: {_bankAccount.GetCurrentBalance():0.00}");
+                Console.WriteLine($"\n\u001b[32mTransfer successful to {recipientName}!\u001b[0m");
+                Console.WriteLine($"\u001b[33mNew balance: {_bankAccount.GetCurrentBalance():0.00}\u001b[0m");
             }
             else
             {
-                Console.WriteLine("Insufficient balance for the transfer.");
+                Console.WriteLine("\n\u001b[31mInsufficient balance for the transfer.\u001b[0m");
             }
         }
 
         public void ShowCardDetails()
         {
-            Console.WriteLine($"Card Number: {_customer.Card.Number.Substring(12)}");
-            Console.WriteLine($"Expiration Date: {_customer.Card.ExpirationDate:MM/yyyy}");
-            Console.WriteLine($"Brand: {_customer.Card.Brand}");
-            Console.WriteLine($"Limit: R$ {_customer.Card.Limit:N2}");
+            
+            Console.WriteLine($"\u001b[34mCard Number:\u001b[0m {_customer.Card.Number.Substring(12)}");
+            Console.WriteLine($"\u001b[34mExpiration Date:\u001b[0m {_customer.Card.ExpirationDate:MM/yyyy}");
+            Console.WriteLine($"\u001b[34mBrand:\u001b[0m {_customer.Card.Brand}");
+            Console.WriteLine($"\u001b[34mLimit:\u001b[0m R$ {_customer.Card.Limit:N2}");
         }
     }
 }
