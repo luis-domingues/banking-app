@@ -7,7 +7,7 @@ A simple digital banking application system built in <a href="https://dotnet.mic
 ![Static Badge](https://img.shields.io/badge/.NET-8.0-purple)
 
 > [!TIP]
-> See how the architecture of banking software works in Java language [devboard](https://github.com/luis-domingues/challenge-digital-bank-architecture-java).
+> See how the architecture of banking software works in Java language in [Digital Banking Architeture](https://github.com/luis-domingues/challenge-digital-bank-architecture-java).
 
 https://github.com/user-attachments/assets/fdabe9b1-cf50-4280-b058-5f32c5da1716
 
